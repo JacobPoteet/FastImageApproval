@@ -32,8 +32,8 @@
             Button_Approve = new Button();
             ImageBox = new PictureBox();
             FileNameTextBox = new TextBox();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            Text_BaseFolder = new TextBox();
+            Text_ApproveFolder = new TextBox();
             Button_SetBaseFolder = new Button();
             Button_SetApproveFolder = new Button();
             Button_Load = new Button();
@@ -80,23 +80,23 @@
             FileNameTextBox.Text = "FileText.png";
             FileNameTextBox.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox1
+            // Text_BaseFolder
             // 
-            textBox1.Anchor = AnchorStyles.Top;
-            textBox1.Location = new Point(410, 545);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(314, 23);
-            textBox1.TabIndex = 4;
+            Text_BaseFolder.Anchor = AnchorStyles.Top;
+            Text_BaseFolder.Location = new Point(410, 545);
+            Text_BaseFolder.Name = "Text_BaseFolder";
+            Text_BaseFolder.ReadOnly = true;
+            Text_BaseFolder.Size = new Size(314, 23);
+            Text_BaseFolder.TabIndex = 4;
             // 
-            // textBox2
+            // Text_ApproveFolder
             // 
-            textBox2.Anchor = AnchorStyles.Top;
-            textBox2.Location = new Point(410, 574);
-            textBox2.Name = "textBox2";
-            textBox2.ReadOnly = true;
-            textBox2.Size = new Size(314, 23);
-            textBox2.TabIndex = 5;
+            Text_ApproveFolder.Anchor = AnchorStyles.Top;
+            Text_ApproveFolder.Location = new Point(410, 574);
+            Text_ApproveFolder.Name = "Text_ApproveFolder";
+            Text_ApproveFolder.ReadOnly = true;
+            Text_ApproveFolder.Size = new Size(314, 23);
+            Text_ApproveFolder.TabIndex = 5;
             // 
             // Button_SetBaseFolder
             // 
@@ -107,6 +107,7 @@
             Button_SetBaseFolder.TabIndex = 6;
             Button_SetBaseFolder.Text = "Set Base Folder";
             Button_SetBaseFolder.UseVisualStyleBackColor = true;
+            Button_SetBaseFolder.Click += Button_SetBaseFolder_Click;
             // 
             // Button_SetApproveFolder
             // 
@@ -127,6 +128,7 @@
             Button_Load.TabIndex = 8;
             Button_Load.Text = "Load";
             Button_Load.UseVisualStyleBackColor = true;
+            Button_Load.Click += Button_Load_Click;
             // 
             // Form1
             // 
@@ -136,8 +138,8 @@
             Controls.Add(Button_Load);
             Controls.Add(Button_SetApproveFolder);
             Controls.Add(Button_SetBaseFolder);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(Text_ApproveFolder);
+            Controls.Add(Text_BaseFolder);
             Controls.Add(FileNameTextBox);
             Controls.Add(ImageBox);
             Controls.Add(Button_Approve);
@@ -155,8 +157,8 @@
         private Button Button_Approve;
         private PictureBox ImageBox;
         private TextBox FileNameTextBox;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox Text_BaseFolder;
+        private TextBox Text_ApproveFolder;
         private Button Button_SetBaseFolder;
         private Button Button_SetApproveFolder;
         private Button Button_Load;
