@@ -4,6 +4,8 @@ namespace FIA_Project
     {
         //create a variable to hold the base folder file paths
         private string[] baseFiles;
+        //create an int to store the file index
+        private int fileIndex = 0;
 
         public Form1()
         {
@@ -14,7 +16,13 @@ namespace FIA_Project
         {
             if (ValidateFolders() == true)
             {
+                //call StoreBaseFiles()
+                StoreBaseFiles();
+                //call DisplayFile() with the first file in baseFiles
+                DisplayFile(baseFiles[0]);
 
+                //reset the file index
+                fileIndex = 0;
             }
         }
 
@@ -78,6 +86,39 @@ namespace FIA_Project
                 }
             }
             return selectedPath;
+        }
+
+        private void Button_Approve_Click(object sender, EventArgs e)
+        {
+            //call CopyFile() with the current file
+            CopyFile(baseFiles[fileIndex]);
+            //increment the file index
+            fileIndex++;
+            //call DisplayFile() with the next file in baseFiles
+            DisplayFile(baseFiles[fileIndex]);
+            
+        }
+
+        private void Button_Reject_Click(object sender, EventArgs e)
+        {
+            // increment the file index
+            fileIndex++;
+            //call DisplayFile() with the next file in baseFiles
+            DisplayFile(baseFiles[fileIndex]);
+            
+        }
+
+        //write a function to copy a file from the base folder to the approve folder
+        private void CopyFile(string file)
+        {
+            //create a string to hold the destination file path
+            string destination = "";
+            //create a string to hold the file name
+            string fileName = Path.GetFileName(file);
+            //create a string to hold the destination file path
+            destination = Path.Combine(Text_ApproveFolder.Text, fileName);
+            //copy the file to the destination using File.Copy()
+            File.Copy(file, destination);
         }
 
     }

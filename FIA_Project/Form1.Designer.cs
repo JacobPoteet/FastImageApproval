@@ -43,22 +43,24 @@
             // Button_Reject
             // 
             Button_Reject.Anchor = AnchorStyles.Top;
-            Button_Reject.Location = new Point(362, 485);
+            Button_Reject.Location = new Point(362, 469);
             Button_Reject.Name = "Button_Reject";
-            Button_Reject.Size = new Size(100, 22);
+            Button_Reject.Size = new Size(100, 54);
             Button_Reject.TabIndex = 0;
             Button_Reject.Text = "Reject";
             Button_Reject.UseVisualStyleBackColor = true;
+            Button_Reject.Click += Button_Reject_Click;
             // 
             // Button_Approve
             // 
             Button_Approve.Anchor = AnchorStyles.Top;
-            Button_Approve.Location = new Point(548, 485);
+            Button_Approve.Location = new Point(548, 469);
             Button_Approve.Name = "Button_Approve";
-            Button_Approve.Size = new Size(100, 22);
+            Button_Approve.Size = new Size(100, 54);
             Button_Approve.TabIndex = 1;
             Button_Approve.Text = "Approve";
             Button_Approve.UseVisualStyleBackColor = true;
+            Button_Approve.Click += Button_Approve_Click;
             // 
             // ImageBox
             // 
