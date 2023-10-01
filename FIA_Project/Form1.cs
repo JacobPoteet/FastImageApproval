@@ -10,6 +10,9 @@ namespace FIA_Project
         public Form1()
         {
             InitializeComponent();
+            //set the reject and approval button to inactive
+            Button_Reject.Enabled = false;
+            Button_Approve.Enabled = false;
         }
 
         #region Button and Text Box Events
@@ -17,6 +20,10 @@ namespace FIA_Project
         {
             if (ValidateFolders() == true)
             {
+                //set the reject and approval button to active
+                Button_Reject.Enabled = true;
+                Button_Approve.Enabled = true;
+
                 //call StoreBaseFiles()
                 StoreBaseFiles();
                 //call DisplayFile() with the first file in baseFiles
