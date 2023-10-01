@@ -42,8 +42,8 @@
             // 
             // Button_Reject
             // 
-            Button_Reject.Anchor = AnchorStyles.Top;
-            Button_Reject.Location = new Point(362, 469);
+            Button_Reject.Anchor = AnchorStyles.Bottom;
+            Button_Reject.Location = new Point(227, 553);
             Button_Reject.Name = "Button_Reject";
             Button_Reject.Size = new Size(100, 54);
             Button_Reject.TabIndex = 0;
@@ -53,8 +53,8 @@
             // 
             // Button_Approve
             // 
-            Button_Approve.Anchor = AnchorStyles.Top;
-            Button_Approve.Location = new Point(548, 469);
+            Button_Approve.Anchor = AnchorStyles.Bottom;
+            Button_Approve.Location = new Point(413, 553);
             Button_Approve.Name = "Button_Approve";
             Button_Approve.Size = new Size(100, 54);
             Button_Approve.TabIndex = 1;
@@ -64,18 +64,18 @@
             // 
             // ImageBox
             // 
-            ImageBox.Anchor = AnchorStyles.Top;
-            ImageBox.Location = new Point(362, 27);
+            ImageBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            ImageBox.Location = new Point(153, 27);
             ImageBox.Name = "ImageBox";
-            ImageBox.Size = new Size(286, 402);
+            ImageBox.Size = new Size(434, 415);
             ImageBox.SizeMode = PictureBoxSizeMode.Zoom;
             ImageBox.TabIndex = 2;
             ImageBox.TabStop = false;
             // 
             // FileNameTextBox
             // 
-            FileNameTextBox.Anchor = AnchorStyles.Top;
-            FileNameTextBox.Location = new Point(375, 436);
+            FileNameTextBox.Anchor = AnchorStyles.Bottom;
+            FileNameTextBox.Location = new Point(239, 486);
             FileNameTextBox.Name = "FileNameTextBox";
             FileNameTextBox.ReadOnly = true;
             FileNameTextBox.Size = new Size(264, 23);
@@ -85,8 +85,8 @@
             // 
             // Text_BaseFolder
             // 
-            Text_BaseFolder.Anchor = AnchorStyles.Top;
-            Text_BaseFolder.Location = new Point(410, 545);
+            Text_BaseFolder.Anchor = AnchorStyles.Bottom;
+            Text_BaseFolder.Location = new Point(275, 629);
             Text_BaseFolder.Name = "Text_BaseFolder";
             Text_BaseFolder.ReadOnly = true;
             Text_BaseFolder.Size = new Size(314, 23);
@@ -94,8 +94,8 @@
             // 
             // Text_ApproveFolder
             // 
-            Text_ApproveFolder.Anchor = AnchorStyles.Top;
-            Text_ApproveFolder.Location = new Point(410, 574);
+            Text_ApproveFolder.Anchor = AnchorStyles.Bottom;
+            Text_ApproveFolder.Location = new Point(275, 658);
             Text_ApproveFolder.Name = "Text_ApproveFolder";
             Text_ApproveFolder.ReadOnly = true;
             Text_ApproveFolder.Size = new Size(314, 23);
@@ -103,8 +103,8 @@
             // 
             // Button_SetBaseFolder
             // 
-            Button_SetBaseFolder.Anchor = AnchorStyles.Top;
-            Button_SetBaseFolder.Location = new Point(283, 545);
+            Button_SetBaseFolder.Anchor = AnchorStyles.Bottom;
+            Button_SetBaseFolder.Location = new Point(148, 629);
             Button_SetBaseFolder.Name = "Button_SetBaseFolder";
             Button_SetBaseFolder.Size = new Size(121, 23);
             Button_SetBaseFolder.TabIndex = 6;
@@ -114,8 +114,8 @@
             // 
             // Button_SetApproveFolder
             // 
-            Button_SetApproveFolder.Anchor = AnchorStyles.Top;
-            Button_SetApproveFolder.Location = new Point(283, 573);
+            Button_SetApproveFolder.Anchor = AnchorStyles.Bottom;
+            Button_SetApproveFolder.Location = new Point(148, 657);
             Button_SetApproveFolder.Name = "Button_SetApproveFolder";
             Button_SetApproveFolder.Size = new Size(121, 23);
             Button_SetApproveFolder.TabIndex = 7;
@@ -125,8 +125,8 @@
             // 
             // Button_Load
             // 
-            Button_Load.Anchor = AnchorStyles.Top;
-            Button_Load.Location = new Point(457, 615);
+            Button_Load.Anchor = AnchorStyles.Bottom;
+            Button_Load.Location = new Point(322, 699);
             Button_Load.Name = "Button_Load";
             Button_Load.Size = new Size(100, 22);
             Button_Load.TabIndex = 8;
@@ -138,7 +138,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1060, 672);
+            ClientSize = new Size(791, 786);
             Controls.Add(Button_Load);
             Controls.Add(Button_SetApproveFolder);
             Controls.Add(Button_SetBaseFolder);
@@ -149,7 +149,7 @@
             Controls.Add(Button_Approve);
             Controls.Add(Button_Reject);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Fast Image Approval";
             ((System.ComponentModel.ISupportInitialize)ImageBox).EndInit();
             ResumeLayout(false);
             PerformLayout();

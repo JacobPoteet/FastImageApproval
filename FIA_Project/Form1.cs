@@ -43,9 +43,9 @@ namespace FIA_Project
         {
             // call CopyFile() with the file in baseFiles at the file index
             CopyFile(baseFiles[fileIndex]);
+
             //call NextFile()
             NextFile();
-
         }
 
         private void Button_Reject_Click(object sender, EventArgs e)
@@ -131,18 +131,20 @@ namespace FIA_Project
                 //if it is, return
                 return;
             }
+
             //increase the file index
             fileIndex++;
+
             //if the file index is greater than the length of base files
             if (fileIndex > baseFiles.Length - 1)
             {
                 //set the file index to 0
                 fileIndex = 0;
             }
+
             //call DisplayFile() with the file at the file index
             DisplayFile(baseFiles[fileIndex]);
         }
         #endregion
-
     }
 }
