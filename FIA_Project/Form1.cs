@@ -12,6 +12,7 @@ namespace FIA_Project
             InitializeComponent();
         }
 
+        #region Button and Text Box Events
         private void Button_Load_Click(object sender, EventArgs e)
         {
             if (ValidateFolders() == true)
@@ -26,6 +27,37 @@ namespace FIA_Project
             }
         }
 
+        private void Button_SetBaseFolder_Click(object sender, EventArgs e)
+        {
+            //set Text_BaseFolder.Text to the path returned by OpenFolderBrowserDialog()
+            Text_BaseFolder.Text = OpenFolderBrowserDialog();
+        }
+
+        private void Button_SetApproveFolder_Click_1(object sender, EventArgs e)
+        {
+            //set Text_BaseFolder.Text to the path returned by OpenFolderBrowserDialog()
+            Text_ApproveFolder.Text = OpenFolderBrowserDialog();
+        }
+
+        private void Button_Approve_Click(object sender, EventArgs e)
+        {
+            // call CopyFile() with the file in baseFiles at the file index
+            CopyFile(baseFiles[fileIndex]);
+            //call NextFile()
+            NextFile();
+
+        }
+
+        private void Button_Reject_Click(object sender, EventArgs e)
+        {
+            //call NextFile()
+            NextFile();
+
+        }
+        #endregion
+
+
+        #region Helper Functions
         //write a function to get all the files in the base folder
         private string[] GetBaseFiles()
         {
@@ -62,17 +94,6 @@ namespace FIA_Project
             return Path.IsPathRooted(path);
         }
 
-        private void Button_SetBaseFolder_Click(object sender, EventArgs e)
-        {
-            //set Text_BaseFolder.Text to the path returned by OpenFolderBrowserDialog()
-            Text_BaseFolder.Text = OpenFolderBrowserDialog();
-        }
-
-        private void Button_SetApproveFolder_Click_1(object sender, EventArgs e)
-        {
-            //set Text_BaseFolder.Text to the path returned by OpenFolderBrowserDialog()
-            Text_ApproveFolder.Text = OpenFolderBrowserDialog();
-        }
 
         //write a function that opens a folder browser dialog and returns the path
         private string OpenFolderBrowserDialog()
@@ -121,22 +142,7 @@ namespace FIA_Project
             //call DisplayFile() with the file at the file index
             DisplayFile(baseFiles[fileIndex]);
         }
-
-        private void Button_Approve_Click(object sender, EventArgs e)
-        {
-            // call CopyFile() with the file in baseFiles at the file index
-            CopyFile(baseFiles[fileIndex]);
-            //call NextFile()
-            NextFile();
-
-        }
-
-        private void Button_Reject_Click(object sender, EventArgs e)
-        {
-            //call NextFile()
-            NextFile();
-
-        }
+        #endregion
 
     }
 }
