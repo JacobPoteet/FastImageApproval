@@ -68,7 +68,7 @@ namespace FIA_Project
             Text_BaseFolder.Text = OpenFolderBrowserDialog();
         }
 
-        private void Button_SetApproveFolder_Click(object sender, EventArgs e)
+        private void Button_SetApproveFolder_Click_1(object sender, EventArgs e)
         {
             //set Text_BaseFolder.Text to the path returned by OpenFolderBrowserDialog()
             Text_ApproveFolder.Text = OpenFolderBrowserDialog();
@@ -88,26 +88,6 @@ namespace FIA_Project
             return selectedPath;
         }
 
-        private void Button_Approve_Click(object sender, EventArgs e)
-        {
-            //call CopyFile() with the current file
-            CopyFile(baseFiles[fileIndex]);
-            //increment the file index
-            fileIndex++;
-            //call DisplayFile() with the next file in baseFiles
-            DisplayFile(baseFiles[fileIndex]);
-            
-        }
-
-        private void Button_Reject_Click(object sender, EventArgs e)
-        {
-            // increment the file index
-            fileIndex++;
-            //call DisplayFile() with the next file in baseFiles
-            DisplayFile(baseFiles[fileIndex]);
-            
-        }
-
         //write a function to copy a file from the base folder to the approve folder
         private void CopyFile(string file)
         {
@@ -119,6 +99,43 @@ namespace FIA_Project
             destination = Path.Combine(Text_ApproveFolder.Text, fileName);
             //copy the file to the destination using File.Copy()
             File.Copy(file, destination);
+        }
+
+        //write a function to increase the index and display the next file
+        private void NextFile()
+        {
+            //check if baseFiles is null
+            if (baseFiles == null)
+            {
+                //if it is, return
+                return;
+            }
+            //increase the file index
+            fileIndex++;
+            //if the file index is greater than the length of base files
+            if (fileIndex > baseFiles.Length - 1)
+            {
+                //set the file index to 0
+                fileIndex = 0;
+            }
+            //call DisplayFile() with the file at the file index
+            DisplayFile(baseFiles[fileIndex]);
+        }
+
+        private void Button_Approve_Click(object sender, EventArgs e)
+        {
+            // call CopyFile() with the file in baseFiles at the file index
+            CopyFile(baseFiles[fileIndex]);
+            //call NextFile()
+            NextFile();
+
+        }
+
+        private void Button_Reject_Click(object sender, EventArgs e)
+        {
+            //call NextFile()
+            NextFile();
+
         }
 
     }

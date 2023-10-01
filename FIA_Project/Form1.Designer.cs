@@ -68,6 +68,7 @@
             ImageBox.Location = new Point(362, 27);
             ImageBox.Name = "ImageBox";
             ImageBox.Size = new Size(286, 402);
+            ImageBox.SizeMode = PictureBoxSizeMode.Zoom;
             ImageBox.TabIndex = 2;
             ImageBox.TabStop = false;
             // 
@@ -120,6 +121,7 @@
             Button_SetApproveFolder.TabIndex = 7;
             Button_SetApproveFolder.Text = "Set Approve Folder";
             Button_SetApproveFolder.UseVisualStyleBackColor = true;
+            Button_SetApproveFolder.Click += Button_SetApproveFolder_Click_1;
             // 
             // Button_Load
             // 
