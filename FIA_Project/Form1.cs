@@ -119,7 +119,7 @@ namespace FIA_Project
             //create a string to hold the destination file path
             destination = Path.Combine(Text_ApproveFolder.Text, fileName);
             //copy the file to the destination using File.Copy()
-            File.Copy(file, destination);
+            File.Copy(file, destination, true);
         }
 
         //write a function to increase the index and display the next file
@@ -132,15 +132,15 @@ namespace FIA_Project
                 return;
             }
 
-            //increase the file index
-            fileIndex++;
 
             //if the file index is greater than the length of base files
-            if (fileIndex > baseFiles.Length - 1)
+            if (fileIndex >= baseFiles.Length -1)
             {
-                //set the file index to 0
-                fileIndex = 0;
+                return;
             }
+
+            //increase the file index
+            fileIndex++;
 
             //call DisplayFile() with the file at the file index
             DisplayFile(baseFiles[fileIndex]);
